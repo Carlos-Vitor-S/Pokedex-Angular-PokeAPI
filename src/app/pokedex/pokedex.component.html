@@ -1,0 +1,31 @@
+<main>
+  <img src="{{ pokemonImage }}" class="pokemonImage" />
+
+  <h1 class="pokedexTitle">
+    <span class="pokemonNumber">{{ pokemonId }} - </span>
+    <span class="pokemonName">{{ pokemonName }}</span>
+  </h1>
+
+  <form [formGroup]="formPokemon" class="formContainer" (ngSubmit)="submit()">
+    <input
+      type="search"
+      placeholder="Name or Number"
+      required
+      formControlName="inputSearch"
+      class="inputSearch"
+      min="1"
+      max="1000"
+    />
+  </form>
+
+  <div class="buttonsContainer">
+    <button class="buttonForm" id="buttonPrev" (click)="getPrevPokemon()">
+      Prev
+    </button>
+    <button class="buttonForm" id="buttonNext" (click)="getNextPokemon()">
+      Next
+    </button>
+  </div>
+
+  <img src="assets/pokedex.png" alt="Pokedex" class="pokedexImage" />
+</main>
